@@ -110,6 +110,30 @@ int k = 0;
 //            }
 //        });
 
+
+        // szary
+        board.piecesTab[7][2].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                board.checketTab[6][3].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        board.piecesTab[7][2].setVisible(false);
+                        board.piecesTab[6][3].setFill(Color.GRAY);
+                        board.piecesTab[6][3].setVisible(true);
+                    }
+                });
+
+            }
+        });
+
+
+
+
+
+
+        // biały
         board.piecesTab[0][5].setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -121,7 +145,6 @@ int k = 0;
                         board.piecesTab[1][4].setVisible(true);
                     }
                 });
-
 
             }
         });
