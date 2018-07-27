@@ -41,12 +41,19 @@ int k = 0;
                             for (int m = 0; m < board.tab.length; m++) {
                                 for (int i = 0; i < board.tab.length; i++) {
                                     board.tab[i][m].setWidth(board.tab[i][m].getWidth()+ substract);
+                                    board.tab2[i][m].setRadius(board.tab2[i][m].getRadius() + substract/8);
+                                    board.tab2[i][m].setCenterX(board.tab[i][m].getWidth()/2);
+                                    board.tab2[i][m].setCenterY(board.tab[i][m].getHeight()/2);
+                                    System.out.println(substract);
                                 }
                             }
                         } else {
                             for (int m = 0; m < board.tab.length; m++) {
                                 for (int i = 0; i < board.tab.length; i++) {
                                     board.tab[i][m].setWidth(board.tab[i][m].getWidth() + substract);
+                                    board.tab2[i][m].setRadius(board.tab2[i][m].getRadius() + substract/8);
+                                    board.tab2[i][m].setCenterX(board.tab[i][m].getWidth()/2);
+                                    board.tab2[i][m].setCenterY(board.tab[i][m].getHeight()/2);
                                 }
                             }
                     }
@@ -63,12 +70,18 @@ int k = 0;
                     for (int m = 0; m < board.tab.length; m++) {
                         for (int i = 0; i < board.tab.length; i++) {
                             board.tab[i][m].setHeight(board.tab[i][m].getHeight() + substract);
+                            board.tab2[i][m].setRadius(board.tab2[i][m].getRadius() + substract/8);
+                            board.tab2[i][m].setCenterX(board.tab[i][m].getWidth()/2);
+                            board.tab2[i][m].setCenterY(board.tab[i][m].getHeight()/2);
                         }
                     }
                 } else {
                     for (int m = 0; m < board.tab.length; m++) {
                         for (int i = 0; i < board.tab.length; i++) {
                             board.tab[i][m].setHeight(board.tab[i][m].getHeight() + substract);
+                            board.tab2[i][m].setRadius(board.tab2[i][m].getRadius() + substract/8);
+                            board.tab2[i][m].setCenterX(board.tab[i][m].getWidth()/2);
+                            board.tab2[i][m].setCenterY(board.tab[i][m].getHeight()/2);
                         }
                     }
                 }
@@ -77,7 +90,6 @@ int k = 0;
 
         primaryStage.widthProperty().addListener(stageSizeListener);
         primaryStage.heightProperty().addListener(stageSizeListener2);
-
 
 //        tab[0][0].setOnMouseClicked(new EventHandler<MouseEvent>() {
 //            @Override

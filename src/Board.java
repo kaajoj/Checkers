@@ -21,7 +21,7 @@ public class Board {
             for (int c = 0; c < tab.length; c++) {
                 Pane pane = new Pane();
                 tab[c][l] = new Rectangle(50, 50);
-                tab2[c][l] = new Circle(25, 25, 18);
+                tab2[c][l] = new Circle(25, 25, 16);
                 tab2[c][l].setFill(Color.WHITE);
 
                 pane.getChildren().addAll(tab[c][l], tab2[c][l]);
