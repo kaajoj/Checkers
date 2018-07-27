@@ -27,7 +27,8 @@ int k = 0;
        primaryStage.setScene(new Scene(board.checker, 500, 500));
 
        board.drawPiece();
-       //board.tab[1][0].setVisible(false);
+       //board.tab[0][0].setVisible(false);
+       //board.tab2[2][4].setVisible(false);
        primaryStage.show();
 
         ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) -> {
@@ -97,25 +98,25 @@ int k = 0;
 //            }
 //        });
 
-        board.tab[0][0].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (i == 3) {
-                    board.tab[0][0].setFill(Color.BLUE);
-                    i = 1;
-                } else {
-                    if (i == 2) {
-                        //board.tab[0][0] = new Rectangle(10,10);
-                        //primaryStage.show();
-                        i = 3;
-                    }
-                    if (i == 1) {
-                        board.tab[0][0].setFill(Color.RED);
-                        i = 2;
-                    }
-                }
-            }
-        });
+//        board.tab[0][0].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//                if (i == 3) {
+//                    board.tab[0][0].setFill(Color.BLUE);
+//                    i = 1;
+//                } else {
+//                    if (i == 2) {
+//                        //board.tab[0][0] = new Rectangle(10,10);
+//                        //primaryStage.show();
+//                        i = 3;
+//                    }
+//                    if (i == 1) {
+//                        board.tab[0][0].setFill(Color.RED);
+//                        i = 2;
+//                    }
+//                }
+//            }
+//        });
 
     }
 
