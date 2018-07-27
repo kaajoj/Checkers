@@ -27,7 +27,7 @@ int k = 0;
        primaryStage.setScene(new Scene(board.checker, 500, 500));
 
        board.drawPiece();
-       board.tab[1][0].setVisible(false);
+       //board.tab[1][0].setVisible(false);
        primaryStage.show();
 
         ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) -> {
