@@ -24,7 +24,7 @@ int k = 0;
        Board board = new Board();
        board.draw();
 
-       primaryStage.setScene(new Scene(board.checker, 500, 500));
+       primaryStage.setScene(new Scene(board.checker, 400, 400));
 
        board.drawPiece();
        //board.tab[0][0].setVisible(false);
