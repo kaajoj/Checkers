@@ -9,7 +9,6 @@ public class Board {
 
     VBox checker = new VBox();
 
-
     Rectangle[][] checketTab = new Rectangle[8][8];
     Circle[][] piecesTab = new Circle[8][8];
 
@@ -60,8 +59,10 @@ public class Board {
                 piecesTab[c][i].setFill(Color.GRAY);
             }
         }
+    }
+
+
 //      Piece piece1 = new Piece();
 //      piece1.drawP1();
-    }
 
 }

@@ -1,6 +1,9 @@
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
@@ -86,24 +89,6 @@ int k = 0;
         primaryStage.widthProperty().addListener(stageSizeListener);
         primaryStage.heightProperty().addListener(stageSizeListener2);
 
-//        checketTab[0][0].setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent event) {
-//                if (i == 3) {
-//                    checketTab[0][0].setFill(Color.BLUE);
-//                    i = 1;
-//                } else {
-//                    if (i == 2) {
-//                        checketTab[0][0].setFill(Color.RED);
-//                        i = 3;
-//                    }
-//                    if (i == 1) {
-//                        checketTab[0][0].setFill(Color.WHITE);
-//                        i = 2;
-//                    }
-//                }
-//            }
-//        });
 
 //        board.checketTab[0][0].setOnMouseClicked(new EventHandler<MouseEvent>() {
 //            @Override
@@ -124,6 +109,43 @@ int k = 0;
 //                }
 //            }
 //        });
+
+        board.piecesTab[0][5].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                board.checketTab[1][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        board.piecesTab[0][5].setVisible(false);
+                        board.piecesTab[1][4].setVisible(true);
+                    }
+                });
+
+
+            }
+        });
+
+        board.piecesTab[2][5].setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                board.checketTab[3][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        board.piecesTab[2][5].setVisible(false);
+                        board.piecesTab[3][4].setVisible(true);
+                    }
+                });
+
+                board.checketTab[1][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        board.piecesTab[2][5].setVisible(false);
+                        board.piecesTab[1][4].setVisible(true);
+                    }
+                });
+            }
+        });
 
     }
 
