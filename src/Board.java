@@ -10,32 +10,32 @@ public class Board {
     VBox checker = new VBox();
 
 
-    Rectangle[][] tab = new Rectangle[8][8];
-    Circle[][] tab2 = new Circle[8][8];
+    Rectangle[][] checketTab = new Rectangle[8][8];
+    Circle[][] piecesTab = new Circle[8][8];
 
 
     public void draw() {
 
-        for (int l = 0; l < tab.length; l++) {
+        for (int l = 0; l < checketTab.length; l++) {
                 HBox level = new HBox();
-            for (int c = 0; c < tab.length; c++) {
+            for (int c = 0; c < checketTab.length; c++) {
                 Pane pane = new Pane();
-                tab[c][l] = new Rectangle(50, 50);
-                tab2[c][l] = new Circle(25, 25, 16);
-                tab2[c][l].setFill(Color.WHITE);
+                checketTab[c][l] = new Rectangle(50, 50);
+                piecesTab[c][l] = new Circle(25, 25, 16);
+                piecesTab[c][l].setFill(Color.WHITE);
 
-                pane.getChildren().addAll(tab[c][l], tab2[c][l]);
+                pane.getChildren().addAll(checketTab[c][l], piecesTab[c][l]);
                 level.getChildren().add(pane);
 
                 if (l % 2 == 0) {
                     if (c % 2 == 0) {
-                        tab[c][l].setFill(Color.WHITE);
-                        tab2[c][l].setFill(Color.BLACK);
+                        checketTab[c][l].setFill(Color.WHITE);
+                        piecesTab[c][l].setFill(Color.BLACK);
                     }
 
                 } else if (c % 2 != 0) {
-                    tab[c][l].setFill(Color.WHITE);
-                    tab2[c][l].setFill(Color.BLACK);
+                    checketTab[c][l].setFill(Color.WHITE);
+                    piecesTab[c][l].setFill(Color.BLACK);
                 }
             }
            checker.getChildren().add(level);
@@ -43,12 +43,25 @@ public class Board {
     }
 
 
-    public void drawPiece(){
-//        Piece piece1 = new Piece();
-//        piece1.drawP1();
-//        checker.getChildren().add(piece1.hbPiece);
-//
-
+    public void drawStartPosition(){
+        for (int c=0; c < piecesTab.length; c++ ) {
+            piecesTab[c][3].setVisible(false);
+            piecesTab[c][4].setVisible(false);
+            for (int l = 0; l < piecesTab.length; l++) {
+                if (l%2 == 0) {
+                    if (c%2 == 0) {
+                        piecesTab[c][l].setVisible(false);
+                    }
+                } else if (c%2 != 0) {
+                    piecesTab[c][l].setVisible(false);
+                }
+            }
+            for (int i = 0; i < 3; i++) {
+                piecesTab[c][i].setFill(Color.GRAY);
+            }
+        }
+//      Piece piece1 = new Piece();
+//      piece1.drawP1();
     }
 
 }
