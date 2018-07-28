@@ -56,7 +56,7 @@ public class Board {
                 }
             }
             for (int i = 0; i < 3; i++) {
-                piecesTab[c][i].setFill(Color.GRAY);
+               piecesTab[c][i].setFill(Color.GRAY);
             }
         }
     }

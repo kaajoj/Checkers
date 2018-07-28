@@ -8,6 +8,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
+import static javafx.scene.paint.Color.GRAY;
+
 
 public class Main extends Application {
 
@@ -103,14 +105,15 @@ int k = 0;
                     @Override
                     public void handle(MouseEvent event) {
 
-
                         if (finalC<7 & finalL<7) {
                             board.checketTab[finalC +1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL +1].setVisible(true);
-                                    //if(board.piecesTab[finalC][finalL].getFill)
+
+                                    board.piecesTab[finalC +1][finalL +1].setFill(Color.GRAY);
+                                    primaryStage.show();
                                 }
                             });
                         }
@@ -120,6 +123,9 @@ int k = 0;
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL +1].setVisible(true);
+
+                                    board.piecesTab[finalC -1][finalL +1].setFill(Color.GRAY);
+                                    primaryStage.show();
                                 }
                             });
                         }
@@ -131,6 +137,9 @@ int k = 0;
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL -1].setVisible(true);
+
+                                    board.piecesTab[finalC +1][finalL -1].setFill(Color.WHITE);
+                                    primaryStage.show();
                                 }
                             });
                         }
@@ -141,6 +150,9 @@ int k = 0;
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL -1].setVisible(true);
+
+                                    board.piecesTab[finalC -1][finalL -1].setFill(Color.WHITE);
+                                    primaryStage.show();
                                 }
                             });
                         }
