@@ -193,7 +193,6 @@ int k = 0;
                                 }
                             });
                         }
-
                         if (finalC>0 & finalL<7) {
                             board.checketTab[finalC -1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
