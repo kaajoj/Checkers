@@ -2,8 +2,10 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
 
@@ -111,64 +113,122 @@ int k = 0;
 //        });
 
 
-        // szary
-        board.piecesTab[7][2].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
+//        // szary
+//        board.piecesTab[7][2].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//
+//                board.checketTab[6][3].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//                    @Override
+//                    public void handle(MouseEvent event) {
+//                        board.piecesTab[7][2].setVisible(false);
+//                        board.piecesTab[6][3].setFill(Color.GRAY);
+//                        board.piecesTab[6][3].setVisible(true);
+//                    }
+//                });
+//
+//            }
+//        });
+//
+//
+//        // biały 1
+//        board.piecesTab[0][5].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//
+//                board.checketTab[1][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//                    @Override
+//                    public void handle(MouseEvent event) {
+//                        board.piecesTab[0][5].setVisible(false);
+//                        board.piecesTab[1][4].setVisible(true);
+//                    }
+//                });
+//
+//            }
+//        });
 
-                board.checketTab[6][3].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//        // bialy2
+//        board.piecesTab[2][5].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//                board.checketTab[3][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//                    @Override
+//                    public void handle(MouseEvent event) {
+//                        board.piecesTab[2][5].setVisible(false);
+//                        board.piecesTab[3][4].setVisible(true);
+//                    }
+//                });
+//
+//                board.checketTab[1][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
+//                    @Override
+//                    public void handle(MouseEvent event) {
+//                        board.piecesTab[2][5].setVisible(false);
+//                        board.piecesTab[1][4].setVisible(true);
+//                    }
+//                });
+//            }
+//        });
+
+
+        for (int c=0; c < board.piecesTab.length; c++) {
+            for (int l = 0; l < board.piecesTab.length; l++) {
+
+                int finalC = c;
+                int finalL = l;
+
+                board.piecesTab[c][l].setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+                    // left and right down
                     @Override
                     public void handle(MouseEvent event) {
-                        board.piecesTab[7][2].setVisible(false);
-                        board.piecesTab[6][3].setFill(Color.GRAY);
-                        board.piecesTab[6][3].setVisible(true);
+
+
+                        if (finalC<7 & finalL<7) {
+                            board.checketTab[finalC +1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                @Override
+                                public void handle(MouseEvent event) {
+                                    board.piecesTab[finalC][finalL].setVisible(false);
+                                    board.piecesTab[finalC +1][finalL +1].setVisible(true);
+                                    //if(board.piecesTab[finalC][finalL].getFill)
+                                }
+                            });
+                        }
+
+                        if (finalC>0 & finalL<7) {
+                            board.checketTab[finalC -1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                @Override
+                                public void handle(MouseEvent event) {
+                                    board.piecesTab[finalC][finalL].setVisible(false);
+                                    board.piecesTab[finalC -1][finalL +1].setVisible(true);
+                                }
+                            });
+                        }
+
+                        // left and right up
+                        if (finalC<7 & finalL>0) {
+                            board.checketTab[finalC +1][finalL -1].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                @Override
+                                public void handle(MouseEvent event) {
+                                    board.piecesTab[finalC][finalL].setVisible(false);
+                                    board.piecesTab[finalC +1][finalL -1].setVisible(true);
+                                }
+                            });
+                        }
+
+                        if (finalC>0 & finalL>0) {
+                            board.checketTab[finalC -1][finalL -1].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                @Override
+                                public void handle(MouseEvent event) {
+                                    board.piecesTab[finalC][finalL].setVisible(false);
+                                    board.piecesTab[finalC -1][finalL -1].setVisible(true);
+                                }
+                            });
+                        }
                     }
                 });
-
             }
-        });
+        }
 
-
-
-
-
-
-        // biały
-        board.piecesTab[0][5].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-
-                board.checketTab[1][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        board.piecesTab[0][5].setVisible(false);
-                        board.piecesTab[1][4].setVisible(true);
-                    }
-                });
-
-            }
-        });
-
-        board.piecesTab[2][5].setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                board.checketTab[3][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        board.piecesTab[2][5].setVisible(false);
-                        board.piecesTab[3][4].setVisible(true);
-                    }
-                });
-
-                board.checketTab[1][4].setOnMouseClicked(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        board.piecesTab[2][5].setVisible(false);
-                        board.piecesTab[1][4].setVisible(true);
-                    }
-                });
-            }
-        });
 
     }
 
