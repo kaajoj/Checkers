@@ -21,7 +21,7 @@ public class Board {
             for (int c = 0; c < checketTab.length; c++) {
                 Pane pane = new Pane();
                 checketTab[c][l] = new Rectangle(50, 50);
-                piecesTab[c][l] = new Circle(25, 25, 16);
+                piecesTab[c][l] = new Circle(25, 25, 18);
                 piecesTab[c][l].setFill(Color.RED);
 
                 pane.getChildren().addAll(checketTab[c][l], piecesTab[c][l]);

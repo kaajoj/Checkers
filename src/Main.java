@@ -20,10 +20,10 @@ public class Main extends Application {
        board.draw();
 
        primaryStage.setScene(new Scene(board.checker, 400, 400));
-       primaryStage.setMinHeight(200);
-       primaryStage.setMinWidth(200);
-       primaryStage.setMaxHeight(600);
-       primaryStage.setMaxWidth(600);
+       primaryStage.setMinHeight(250);
+       primaryStage.setMinWidth(250);
+       primaryStage.setMaxHeight(550);
+       primaryStage.setMaxWidth(550);
 
        board.drawStartPosition();
        primaryStage.show();
@@ -95,11 +95,9 @@ public class Main extends Application {
                 int finalL = l;
 
                 board.piecesTab[c][l].setOnMouseClicked(new EventHandler<MouseEvent>() {
-
                     // left and right down
                     @Override
                     public void handle(MouseEvent event) {
-
                         if (finalC<7 & finalL<7) {
 
                             board.checketTab[finalC +1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
