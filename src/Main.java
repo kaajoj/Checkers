@@ -28,6 +28,7 @@ public class Main extends Application {
        board.drawStartPosition();
        primaryStage.show();
 
+
         ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) -> {
             double oldV = oldValue.doubleValue();
             double newV = newValue.doubleValue();
@@ -130,6 +131,7 @@ public class Main extends Application {
                                         board.piecesTab[finalC + 1][finalL + 1].setVisible(false);
                                         board.piecesTab[finalC + 2][finalL + 2].setVisible(true);
                                         primaryStage.show();
+                                        statement();
                                     }
                                 });
                             }
@@ -166,6 +168,7 @@ public class Main extends Application {
                                         board.piecesTab[finalC - 1][finalL + 1].setVisible(false);
                                         board.piecesTab[finalC - 2][finalL + 2].setVisible(true);
                                         primaryStage.show();
+                                        statement();
                                     }
                                 });
                             }
@@ -203,7 +206,7 @@ public class Main extends Application {
                                         board.piecesTab[finalC + 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC + 2][finalL - 2].setVisible(true);
                                         primaryStage.show();
-
+                                        statement();
                                     }
                                 });
                             }
@@ -240,7 +243,7 @@ public class Main extends Application {
                                         board.piecesTab[finalC - 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC - 2][finalL - 2].setVisible(true);
                                         primaryStage.show();
-
+                                        statement();
                                     }
                                 });
                             }
@@ -250,6 +253,15 @@ public class Main extends Application {
             }
         }
 
+
+    }
+
+    private void statement() {
+        if (countUpRed == 12) {
+            System.out.println("Gracz czerwon wygrywa!");
+        } else if (countDownGray == 12) {
+            System.out.println("Gracz szary wygrywa!");
+        }
     }
 
     public static void main(String[] args) {
