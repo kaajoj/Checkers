@@ -106,55 +106,108 @@ int k = 0;
                     public void handle(MouseEvent event) {
 
                         if (finalC<7 & finalL<7) {
+
                             board.checketTab[finalC +1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL +1].setVisible(true);
-
                                     board.piecesTab[finalC +1][finalL +1].setFill(Color.GRAY);
                                     primaryStage.show();
                                 }
                             });
+                            //movement of beating a pawn
+                            if (finalC<6 & finalL<6) {
+                                board.checketTab[finalC + 2][finalL + 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                    @Override
+                                    public void handle(MouseEvent event) {
+                                        board.piecesTab[finalC][finalL].setVisible(false);
+                                        board.piecesTab[finalC + 1][finalL + 1].setVisible(false);
+                                        board.piecesTab[finalC + 2][finalL + 2].setVisible(true);
+                                        board.piecesTab[finalC + 2][finalL + 2].setFill(Color.GRAY);
+                                        primaryStage.show();
+                                    }
+                                });
+                            }
                         }
+
                         if (finalC>0 & finalL<7) {
+
                             board.checketTab[finalC -1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL +1].setVisible(true);
-
                                     board.piecesTab[finalC -1][finalL +1].setFill(Color.GRAY);
                                     primaryStage.show();
                                 }
                             });
+                           // movement of beating a pawn
+                            if (finalC>1 & finalL<6) {
+                                board.checketTab[finalC - 2][finalL + 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                    @Override
+                                    public void handle(MouseEvent event) {
+                                        board.piecesTab[finalC][finalL].setVisible(false);
+                                        board.piecesTab[finalC - 1][finalL + 1].setVisible(false);
+                                        board.piecesTab[finalC - 2][finalL + 2].setVisible(true);
+                                        board.piecesTab[finalC - 2][finalL + 2].setFill(Color.GRAY);
+                                        primaryStage.show();
+                                    }
+                                });
+                            }
                         }
 
                         // left and right up
                         if (finalC<7 & finalL>0) {
+
                             board.checketTab[finalC +1][finalL -1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL -1].setVisible(true);
-
                                     board.piecesTab[finalC +1][finalL -1].setFill(Color.WHITE);
                                     primaryStage.show();
                                 }
                             });
+                            // movement of beating a pawn
+                            if (finalC<6 & finalL>1) {
+                                board.checketTab[finalC + 2][finalL - 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                    @Override
+                                    public void handle(MouseEvent event) {
+                                        board.piecesTab[finalC][finalL].setVisible(false);
+                                        board.piecesTab[finalC + 1][finalL - 1].setVisible(false);
+                                        board.piecesTab[finalC + 2][finalL - 2].setVisible(true);
+                                        board.piecesTab[finalC + 2][finalL - 2].setFill(Color.WHITE);
+                                        primaryStage.show();
+                                    }
+                                });
+                            }
                         }
 
                         if (finalC>0 & finalL>0) {
+
                             board.checketTab[finalC -1][finalL -1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL -1].setVisible(true);
-
                                     board.piecesTab[finalC -1][finalL -1].setFill(Color.WHITE);
                                     primaryStage.show();
                                 }
                             });
+                            // movement of beating a pawn
+                            if (finalC>1 & finalL>1) {
+                                board.checketTab[finalC - 2][finalL - 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
+                                    @Override
+                                    public void handle(MouseEvent event) {
+                                        board.piecesTab[finalC][finalL].setVisible(false);
+                                        board.piecesTab[finalC - 1][finalL - 1].setVisible(false);
+                                        board.piecesTab[finalC - 2][finalL - 2].setVisible(true);
+                                        board.piecesTab[finalC - 2][finalL - 2].setFill(Color.WHITE);
+                                        primaryStage.show();
+                                    }
+                                });
+                            }
                         }
                     }
                 });
