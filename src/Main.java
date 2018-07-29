@@ -36,23 +36,9 @@ public class Main extends Application {
             if (!Double.isNaN(oldV)) {
                 double substract = (newV-oldV)/8;
                     if (oldValue.intValue() < newValue.intValue()) {
-                            for (int m = 0; m < board.checketTab.length; m++) {
-                                for (int i = 0; i < board.checketTab.length; i++) {
-                                    board.checketTab[i][m].setWidth(board.checketTab[i][m].getWidth()+ substract);
-                                    board.piecesTab[i][m].setRadius(board.piecesTab[i][m].getRadius() + substract/8);
-                                    board.piecesTab[i][m].setCenterX(board.checketTab[i][m].getWidth()/2);
-                                    board.piecesTab[i][m].setCenterY(board.checketTab[i][m].getHeight()/2);
-                                }
-                            }
-                        } else {
-                            for (int m = 0; m < board.checketTab.length; m++) {
-                                for (int i = 0; i < board.checketTab.length; i++) {
-                                    board.checketTab[i][m].setWidth(board.checketTab[i][m].getWidth() + substract);
-                                    board.piecesTab[i][m].setRadius(board.piecesTab[i][m].getRadius() + substract/8);
-                                    board.piecesTab[i][m].setCenterX(board.checketTab[i][m].getWidth()/2);
-                                    board.piecesTab[i][m].setCenterY(board.checketTab[i][m].getHeight()/2);
-                                }
-                            }
+                        resizableMethod(board, substract);
+                    } else {
+                        resizableMethod(board, substract);
                     }
             }
         };
@@ -64,23 +50,9 @@ public class Main extends Application {
             if (!Double.isNaN(oldV)) {
                 double substract = (newV-oldV)/8;
                 if (oldValue.intValue() < newValue.intValue()) {
-                    for (int m = 0; m < board.checketTab.length; m++) {
-                        for (int i = 0; i < board.checketTab.length; i++) {
-                            board.checketTab[i][m].setHeight(board.checketTab[i][m].getHeight() + substract);
-                            board.piecesTab[i][m].setRadius(board.piecesTab[i][m].getRadius() + substract/8);
-                            board.piecesTab[i][m].setCenterX(board.checketTab[i][m].getWidth()/2);
-                            board.piecesTab[i][m].setCenterY(board.checketTab[i][m].getHeight()/2);
-                        }
-                    }
+                    resizableMethod2(board, substract);
                 } else {
-                    for (int m = 0; m < board.checketTab.length; m++) {
-                        for (int i = 0; i < board.checketTab.length; i++) {
-                            board.checketTab[i][m].setHeight(board.checketTab[i][m].getHeight() + substract);
-                            board.piecesTab[i][m].setRadius(board.piecesTab[i][m].getRadius() + substract/8);
-                            board.piecesTab[i][m].setCenterX(board.checketTab[i][m].getWidth()/2);
-                            board.piecesTab[i][m].setCenterY(board.checketTab[i][m].getHeight()/2);
-                        }
-                    }
+                    resizableMethod2(board, substract);
                 }
             }
         };
@@ -252,6 +224,28 @@ public class Main extends Application {
         }
 
 
+    }
+
+    private void resizableMethod2(Board board, double substract) {
+        for (int m = 0; m < board.checketTab.length; m++) {
+            for (int i = 0; i < board.checketTab.length; i++) {
+                board.checketTab[i][m].setHeight(board.checketTab[i][m].getHeight() + substract);
+                board.piecesTab[i][m].setRadius(board.piecesTab[i][m].getRadius() + substract/8);
+                board.piecesTab[i][m].setCenterX(board.checketTab[i][m].getWidth()/2);
+                board.piecesTab[i][m].setCenterY(board.checketTab[i][m].getHeight()/2);
+            }
+        }
+    }
+
+    private void resizableMethod(Board board, double substract) {
+        for (int m = 0; m < board.checketTab.length; m++) {
+            for (int i = 0; i < board.checketTab.length; i++) {
+                board.checketTab[i][m].setWidth(board.checketTab[i][m].getWidth()+ substract);
+                board.piecesTab[i][m].setRadius(board.piecesTab[i][m].getRadius() + substract/8);
+                board.piecesTab[i][m].setCenterX(board.checketTab[i][m].getWidth()/2);
+                board.piecesTab[i][m].setCenterY(board.checketTab[i][m].getHeight()/2);
+            }
+        }
     }
 
     private void statement() {
