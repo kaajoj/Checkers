@@ -104,9 +104,11 @@ public class Main extends Application {
                             board.checketTab[finalC +1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
+                                    if(board.piecesTab[finalC][finalL].getFill()==Color.GRAY) {
+                                        board.piecesTab[finalC + 1][finalL + 1].setFill(Color.GRAY);
+                                    } else board.piecesTab[finalC + 1][finalL + 1].setFill(Color.RED);
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL +1].setVisible(true);
-                                    board.piecesTab[finalC +1][finalL +1].setFill(Color.GRAY);
                                     primaryStage.show();
                                     CountDown++;
                                     System.out.println("Gray score: " + CountDown);
@@ -117,10 +119,12 @@ public class Main extends Application {
                                 board.checketTab[finalC + 2][finalL + 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                     @Override
                                     public void handle(MouseEvent event) {
+                                        if(board.piecesTab[finalC][finalL].getFill()==Color.GRAY) {
+                                            board.piecesTab[finalC + 2][finalL + 2].setFill(Color.GRAY);
+                                        } else board.piecesTab[finalC + 2][finalL + 2].setFill(Color.RED);
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC + 1][finalL + 1].setVisible(false);
                                         board.piecesTab[finalC + 2][finalL + 2].setVisible(true);
-                                        board.piecesTab[finalC + 2][finalL + 2].setFill(Color.GRAY);
                                         primaryStage.show();
                                         CountDown++;
                                         System.out.println("Gray score: " + CountDown);
@@ -134,9 +138,11 @@ public class Main extends Application {
                             board.checketTab[finalC -1][finalL +1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
+                                    if(board.piecesTab[finalC][finalL].getFill()==Color.GRAY) {
+                                        board.piecesTab[finalC - 1][finalL + 1].setFill(Color.GRAY);
+                                    } else board.piecesTab[finalC - 1][finalL + 1].setFill(Color.RED);
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL +1].setVisible(true);
-                                    board.piecesTab[finalC -1][finalL +1].setFill(Color.GRAY);
                                     primaryStage.show();
                                     CountDown++;
                                     System.out.println("Gray score: " + CountDown);
@@ -147,10 +153,12 @@ public class Main extends Application {
                                 board.checketTab[finalC - 2][finalL + 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                     @Override
                                     public void handle(MouseEvent event) {
+                                        if(board.piecesTab[finalC][finalL].getFill()==Color.GRAY) {
+                                            board.piecesTab[finalC - 2][finalL + 2].setFill(Color.GRAY);
+                                        } else board.piecesTab[finalC - 2][finalL + 2].setFill(Color.RED);
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC - 1][finalL + 1].setVisible(false);
                                         board.piecesTab[finalC - 2][finalL + 2].setVisible(true);
-                                        board.piecesTab[finalC - 2][finalL + 2].setFill(Color.GRAY);
                                         primaryStage.show();
                                         CountDown++;
                                         System.out.println("Gray score: " + CountDown);
@@ -165,9 +173,11 @@ public class Main extends Application {
                             board.checketTab[finalC +1][finalL -1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
+                                    if(board.piecesTab[finalC][finalL].getFill()==Color.RED) {
+                                        board.piecesTab[finalC + 1][finalL - 1].setFill(Color.RED);
+                                    } else board.piecesTab[finalC + 1][finalL - 1].setFill(Color.GRAY);
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL -1].setVisible(true);
-                                    board.piecesTab[finalC +1][finalL -1].setFill(Color.RED);
                                     primaryStage.show();
                                     countUp++;
                                     System.out.println("Red score: " + countUp);
@@ -178,10 +188,12 @@ public class Main extends Application {
                                 board.checketTab[finalC + 2][finalL - 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                     @Override
                                     public void handle(MouseEvent event) {
+                                        if(board.piecesTab[finalC][finalL].getFill()==Color.RED) {
+                                            board.piecesTab[finalC + 2][finalL - 2].setFill(Color.RED);
+                                        } else board.piecesTab[finalC + 2][finalL - 2].setFill(Color.GRAY);
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC + 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC + 2][finalL - 2].setVisible(true);
-                                        board.piecesTab[finalC + 2][finalL - 2].setFill(Color.RED);
                                         primaryStage.show();
                                         countUp++;
                                         System.out.println("Red score: " + countUp);
@@ -195,9 +207,11 @@ public class Main extends Application {
                             board.checketTab[finalC -1][finalL -1].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                 @Override
                                 public void handle(MouseEvent event) {
+                                    if(board.piecesTab[finalC][finalL].getFill()==Color.RED) {
+                                        board.piecesTab[finalC - 1][finalL - 1].setFill(Color.RED);
+                                    } else board.piecesTab[finalC - 1][finalL - 1].setFill(Color.GRAY);
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL -1].setVisible(true);
-                                    board.piecesTab[finalC -1][finalL -1].setFill(Color.RED);
                                     primaryStage.show();
                                     countUp++;
                                     System.out.println("Red score: " + countUp);
@@ -208,10 +222,12 @@ public class Main extends Application {
                                 board.checketTab[finalC - 2][finalL - 2].setOnMouseClicked(new EventHandler<MouseEvent>() {
                                     @Override
                                     public void handle(MouseEvent event) {
+                                        if(board.piecesTab[finalC][finalL].getFill()==Color.RED) {
+                                            board.piecesTab[finalC - 2][finalL - 2].setFill(Color.RED);
+                                        } else board.piecesTab[finalC - 2][finalL - 2].setFill(Color.GRAY);
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC - 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC - 2][finalL - 2].setVisible(true);
-                                        board.piecesTab[finalC - 2][finalL - 2].setFill(Color.RED);
                                         primaryStage.show();
                                         countUp++;
                                         System.out.println("Red score: " + countUp);
