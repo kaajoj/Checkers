@@ -110,8 +110,6 @@ public class Main extends Application {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL +1].setVisible(true);
                                     primaryStage.show();
-                                    CountDown++;
-                                    System.out.println("Gray score: " + CountDown);
                                 }
                             });
                             //movement of beating a pawn
@@ -144,8 +142,6 @@ public class Main extends Application {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL +1].setVisible(true);
                                     primaryStage.show();
-                                    CountDown++;
-                                    System.out.println("Gray score: " + CountDown);
                                 }
                             });
                            // movement of beating a pawn
@@ -179,8 +175,6 @@ public class Main extends Application {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL -1].setVisible(true);
                                     primaryStage.show();
-                                    countUp++;
-                                    System.out.println("Red score: " + countUp);
                                 }
                             });
                             // movement of beating a pawn
@@ -213,8 +207,6 @@ public class Main extends Application {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL -1].setVisible(true);
                                     primaryStage.show();
-                                    countUp++;
-                                    System.out.println("Red score: " + countUp);
                                 }
                             });
                             // movement of beating a pawn
