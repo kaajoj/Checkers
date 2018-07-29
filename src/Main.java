@@ -28,7 +28,6 @@ public class Main extends Application {
        board.drawStartPosition();
        primaryStage.show();
 
-
         ChangeListener<Number> stageSizeListener = (observable, oldValue, newValue) -> {
             double oldV = oldValue.doubleValue();
             double newV = newValue.doubleValue();

@@ -8,11 +8,8 @@ import javafx.scene.shape.Rectangle;
 public class Board {
 
     VBox checker = new VBox();
-
     Rectangle[][] checketTab = new Rectangle[8][8];
     Circle[][] piecesTab = new Circle[8][8];
-
-
 
     public void draw() {
 
@@ -40,7 +37,6 @@ public class Board {
         }
     }
 
-
     public void drawStartPosition(){
         for (int c=0; c < piecesTab.length; c++ ) {
             piecesTab[c][3].setVisible(false);
@@ -59,9 +55,5 @@ public class Board {
             }
         }
     }
-
-
-//      Piece piece1 = new Piece();
-//      piece1.drawP1();
 
 }
