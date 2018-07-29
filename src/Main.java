@@ -2,15 +2,9 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
-
-import static javafx.scene.paint.Color.GRAY;
-
-;
 
 public class Main extends Application {
 
@@ -229,7 +223,6 @@ public class Main extends Application {
                 });
             }
         }
-
 
     }
 
