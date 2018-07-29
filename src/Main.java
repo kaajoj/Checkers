@@ -8,8 +8,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    int countUp = 0;
-    int CountDown = 0;
+    int countUpRed = 0;
+    int countDownGray = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -119,13 +119,17 @@ public class Main extends Application {
                                     public void handle(MouseEvent event) {
                                         if(board.piecesTab[finalC][finalL].getFill()==Color.GRAY) {
                                             board.piecesTab[finalC + 2][finalL + 2].setFill(Color.GRAY);
-                                        } else board.piecesTab[finalC + 2][finalL + 2].setFill(Color.RED);
+                                            countDownGray++;
+                                            System.out.println("Gray score: " + countDownGray);
+                                        } else {
+                                            board.piecesTab[finalC + 2][finalL + 2].setFill(Color.RED);
+                                            countUpRed++;
+                                            System.out.println("Red score: " + countUpRed);
+                                        }
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC + 1][finalL + 1].setVisible(false);
                                         board.piecesTab[finalC + 2][finalL + 2].setVisible(true);
                                         primaryStage.show();
-                                        CountDown++;
-                                        System.out.println("Gray score: " + CountDown);
                                     }
                                 });
                             }
@@ -151,13 +155,17 @@ public class Main extends Application {
                                     public void handle(MouseEvent event) {
                                         if(board.piecesTab[finalC][finalL].getFill()==Color.GRAY) {
                                             board.piecesTab[finalC - 2][finalL + 2].setFill(Color.GRAY);
-                                        } else board.piecesTab[finalC - 2][finalL + 2].setFill(Color.RED);
+                                            countDownGray++;
+                                            System.out.println("Gray score: " + countDownGray);
+                                        } else {
+                                            board.piecesTab[finalC - 2][finalL + 2].setFill(Color.RED);
+                                            countUpRed++;
+                                            System.out.println("Red score: " + countUpRed);
+                                        }
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC - 1][finalL + 1].setVisible(false);
                                         board.piecesTab[finalC - 2][finalL + 2].setVisible(true);
                                         primaryStage.show();
-                                        CountDown++;
-                                        System.out.println("Gray score: " + CountDown);
                                     }
                                 });
                             }
@@ -184,13 +192,18 @@ public class Main extends Application {
                                     public void handle(MouseEvent event) {
                                         if(board.piecesTab[finalC][finalL].getFill()==Color.RED) {
                                             board.piecesTab[finalC + 2][finalL - 2].setFill(Color.RED);
-                                        } else board.piecesTab[finalC + 2][finalL - 2].setFill(Color.GRAY);
+                                            countUpRed++;
+                                            System.out.println("Red score: " + countUpRed);
+                                        } else {
+                                            board.piecesTab[finalC + 2][finalL - 2].setFill(Color.GRAY);
+                                            countDownGray++;
+                                            System.out.println("Gray score: " + countDownGray);
+                                        }
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC + 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC + 2][finalL - 2].setVisible(true);
                                         primaryStage.show();
-                                        countUp++;
-                                        System.out.println("Red score: " + countUp);
+
                                     }
                                 });
                             }
@@ -216,13 +229,18 @@ public class Main extends Application {
                                     public void handle(MouseEvent event) {
                                         if(board.piecesTab[finalC][finalL].getFill()==Color.RED) {
                                             board.piecesTab[finalC - 2][finalL - 2].setFill(Color.RED);
-                                        } else board.piecesTab[finalC - 2][finalL - 2].setFill(Color.GRAY);
+                                            countUpRed++;
+                                            System.out.println("Red score: " + countUpRed);
+                                        } else {
+                                            board.piecesTab[finalC - 2][finalL - 2].setFill(Color.GRAY);
+                                            countDownGray++;
+                                            System.out.println("Gray score: " + countDownGray);
+                                        }
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC - 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC - 2][finalL - 2].setVisible(true);
                                         primaryStage.show();
-                                        countUp++;
-                                        System.out.println("Red score: " + countUp);
+
                                     }
                                 });
                             }
