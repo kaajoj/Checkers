@@ -13,6 +13,7 @@ public class Board {
     Circle[][] piecesTab = new Circle[8][8];
 
 
+
     public void draw() {
 
         for (int l = 0; l < checketTab.length; l++) {
@@ -21,7 +22,7 @@ public class Board {
                 Pane pane = new Pane();
                 checketTab[c][l] = new Rectangle(50, 50);
                 piecesTab[c][l] = new Circle(25, 25, 16);
-                piecesTab[c][l].setFill(Color.WHITE);
+                piecesTab[c][l].setFill(Color.RED);
 
                 pane.getChildren().addAll(checketTab[c][l], piecesTab[c][l]);
                 level.getChildren().add(pane);
@@ -29,12 +30,10 @@ public class Board {
                 if (l % 2 == 0) {
                     if (c % 2 == 0) {
                         checketTab[c][l].setFill(Color.WHITE);
-                        piecesTab[c][l].setFill(Color.BLACK);
                     }
 
                 } else if (c % 2 != 0) {
                     checketTab[c][l].setFill(Color.WHITE);
-                    piecesTab[c][l].setFill(Color.BLACK);
                 }
             }
            checker.getChildren().add(level);

@@ -10,12 +10,12 @@ import javafx.stage.Stage;
 
 import static javafx.scene.paint.Color.GRAY;
 
+;
 
 public class Main extends Application {
 
-
-int i = 1;
-int k = 0;
+    int countUp = 0;
+    int CountDown = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -26,10 +26,10 @@ int k = 0;
        board.draw();
 
        primaryStage.setScene(new Scene(board.checker, 400, 400));
-       primaryStage.setMinHeight(256);
-       primaryStage.setMinWidth(256);
-       primaryStage.setMaxHeight(640);
-       primaryStage.setMaxWidth(640);
+       primaryStage.setMinHeight(200);
+       primaryStage.setMinWidth(200);
+       primaryStage.setMaxHeight(600);
+       primaryStage.setMaxWidth(600);
 
        board.drawStartPosition();
        primaryStage.show();
@@ -114,6 +114,8 @@ int k = 0;
                                     board.piecesTab[finalC +1][finalL +1].setVisible(true);
                                     board.piecesTab[finalC +1][finalL +1].setFill(Color.GRAY);
                                     primaryStage.show();
+                                    CountDown++;
+                                    System.out.println("Gray score: " + CountDown);
                                 }
                             });
                             //movement of beating a pawn
@@ -126,6 +128,8 @@ int k = 0;
                                         board.piecesTab[finalC + 2][finalL + 2].setVisible(true);
                                         board.piecesTab[finalC + 2][finalL + 2].setFill(Color.GRAY);
                                         primaryStage.show();
+                                        CountDown++;
+                                        System.out.println("Gray score: " + CountDown);
                                     }
                                 });
                             }
@@ -140,6 +144,8 @@ int k = 0;
                                     board.piecesTab[finalC -1][finalL +1].setVisible(true);
                                     board.piecesTab[finalC -1][finalL +1].setFill(Color.GRAY);
                                     primaryStage.show();
+                                    CountDown++;
+                                    System.out.println("Gray score: " + CountDown);
                                 }
                             });
                            // movement of beating a pawn
@@ -152,6 +158,8 @@ int k = 0;
                                         board.piecesTab[finalC - 2][finalL + 2].setVisible(true);
                                         board.piecesTab[finalC - 2][finalL + 2].setFill(Color.GRAY);
                                         primaryStage.show();
+                                        CountDown++;
+                                        System.out.println("Gray score: " + CountDown);
                                     }
                                 });
                             }
@@ -165,8 +173,10 @@ int k = 0;
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC +1][finalL -1].setVisible(true);
-                                    board.piecesTab[finalC +1][finalL -1].setFill(Color.WHITE);
+                                    board.piecesTab[finalC +1][finalL -1].setFill(Color.RED);
                                     primaryStage.show();
+                                    countUp++;
+                                    System.out.println("Red score: " + countUp);
                                 }
                             });
                             // movement of beating a pawn
@@ -177,8 +187,10 @@ int k = 0;
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC + 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC + 2][finalL - 2].setVisible(true);
-                                        board.piecesTab[finalC + 2][finalL - 2].setFill(Color.WHITE);
+                                        board.piecesTab[finalC + 2][finalL - 2].setFill(Color.RED);
                                         primaryStage.show();
+                                        countUp++;
+                                        System.out.println("Red score: " + countUp);
                                     }
                                 });
                             }
@@ -191,8 +203,10 @@ int k = 0;
                                 public void handle(MouseEvent event) {
                                     board.piecesTab[finalC][finalL].setVisible(false);
                                     board.piecesTab[finalC -1][finalL -1].setVisible(true);
-                                    board.piecesTab[finalC -1][finalL -1].setFill(Color.WHITE);
+                                    board.piecesTab[finalC -1][finalL -1].setFill(Color.RED);
                                     primaryStage.show();
+                                    countUp++;
+                                    System.out.println("Red score: " + countUp);
                                 }
                             });
                             // movement of beating a pawn
@@ -203,8 +217,10 @@ int k = 0;
                                         board.piecesTab[finalC][finalL].setVisible(false);
                                         board.piecesTab[finalC - 1][finalL - 1].setVisible(false);
                                         board.piecesTab[finalC - 2][finalL - 2].setVisible(true);
-                                        board.piecesTab[finalC - 2][finalL - 2].setFill(Color.WHITE);
+                                        board.piecesTab[finalC - 2][finalL - 2].setFill(Color.RED);
                                         primaryStage.show();
+                                        countUp++;
+                                        System.out.println("Red score: " + countUp);
                                     }
                                 });
                             }
